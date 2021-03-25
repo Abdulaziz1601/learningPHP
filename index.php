@@ -7,9 +7,9 @@
 //Starting session
 session_start();
 //Variable validation and
-$city = isset($_SESSION['city'])? $_SESSION['city'] : '';
-$state = isset($_SESSION['state'])? $_SESSION['state'] : '';
-$zipCode = isset($_SESSION['zipCode'])? $_SESSION['zipCode'] : '';
+$city = isset($_SESSION['city']) ? $_SESSION['city'] : '';
+$state = isset($_SESSION['state']) ? $_SESSION['state'] : '';
+$zipCode = isset($_SESSION['zipCode']) ? $_SESSION['zipCode'] : '';
 
 
 $isCityValid = true;
@@ -26,12 +26,21 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 
     $isValid = $isZipCodeValid && $isCityValid && $isStateValid;
     if ($isValid) {
-        setcookie('city', $city, time() + 3600);
-        setcookie('state', $state, time() + 3600);
-        setcookie('zipCode', $zipCode, time() + 3600);
+//        Adding cookies, for duration of 1 hour
+//        setcookie('city', $city, time() + 3600);
+//        setcookie('state', $state, time() + 3600);
+//        setcookie('zipCode', $zipCode, time() + 3600);
 
+//        Working with sessions instead of cookies
+        $_SESSION['city'] = $city;
+        $_SESSION['state'] = $state;
+        $_SESSION['zipCode'] = $zipCode;
+
+
+//      Redirecting to thank you page, with http headers
         header('Location: ty.php', TRUE, 301);
-//    } else { // Killing Cookie
+    }
+//    } else { // Killing Cookies
 //        setcookie('city', $city, time() - 1);
 //        setcookie('state', $state, time() - 1);
 //        setcookie('zipCode', $zipCode, time() - 1);
