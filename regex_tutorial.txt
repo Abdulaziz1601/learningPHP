@@ -1,0 +1,61 @@
+Matching only digits
+\d - matches any digit
+
+However, \D matches any non-digit character
+\D - 	Any Non-digit character
+
+ . - matches any character
+ In order to match dot (.) we can use escaping characters like: \.
+ \. - matches only dots
+
+ Excluding specific characters
+ We can exclude some specific characters using ^ (hat)
+  ^ - excludes characters
+  EX: [^abc] will match any single character except for the letters a, b, or c.
+
+We use - (dash) to indicate a character range.
+the pattern [0-6] will only match any single digit character from zero to six,
+and nothing else. And likewise,
+[^n-p] will only match any single character except for letters n to p.
+
+
+{m} - m Repetitions
+{m,n} - m to n Repetitions
+w{3} - will match 3 repeated "w"s
+wwwhat wwwite wwwel   lowwwe
+
+*	Zero or more repetitions
++	One or more repetitions
+
+Task	Text
+Match	aaaabcc	To be completed
+Match	aabbbbc	To be completed
+Match	aacc	To be completed
+Skip	a
+
+Optional characters
+
+? (question mark) denotes optionality.
+? - allows you to match either zero or one of the preceding character or group.
+For example, the pattern ab?c will match either the strings "abc" or "ac" because the b is considered optional.
+
+
+abcdefghijklmnopqurtuvwxyz
+ABCDEFGHILKMNOPQRSTUVWXYZ
+1234567890
+
+Ha HaHa
+
+MetaCharacters (Need to be escaped):
+.[{()\^$|?*+
+
+coreyms.com
+
+321-555-4321
+123.555.1234
+
+Mr. Schafer
+Mr Smith
+Ms Davis
+Mrs. Robinson
+Mr. T
