@@ -34,11 +34,18 @@ Match	aacc	To be completed
 Skip	a
 
 Optional characters
-
 ? (question mark) denotes optionality.
 ? - allows you to match either zero or one of the preceding character or group.
 For example, the pattern ab?c will match either the strings "abc" or "ac" because the b is considered optional.
 
+All whitespace
+space ( ), tab (\t), new line (\n) and the carriage return (\r)
+\s - match any whitespace
+\s - do NOT match  any whitespace
+
+ ^ (hat) and $ (dollar sign) - ^$ - ^(BEGIN)  (END)$
+ we can use the pattern ^success to match only a line that begins with the word "success",
+ but not the line "Error: unsuccessful operation"
 
 abcdefghijklmnopqurtuvwxyz
 ABCDEFGHILKMNOPQRSTUVWXYZ
