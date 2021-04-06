@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if (isset($_SESSION['user'])) {
+        header('Location: profile.php');
+    }
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,18 +16,23 @@
 </head>
 <body>
     <!--Authorization form-->
-    <form action="" method="post">
+    <form action="vendor/signin.php" method="post">
         <label>Login</label>
-        <input type="text"  placeholder="Enter your login">
+        <input type="text" name="login"  placeholder="Enter your login">
 
         <label>Password</label>
-        <input type="password" placeholder="Enter your password">
+        <input type="password" name="password" placeholder="Enter your password">
 
         <button>Log In</button>
         <p>
             You have an account ? - <a href="register.php">Register</a>
         </p>
-        
+        <?php
+        if (isset($_SESSION['message'])) {
+            echo '<p class="msg">' . $_SESSION['message'] . '</p>';
+        }
+        unset($_SESSION['message']);
+        ?>
     </form>
 </body>
 </html>

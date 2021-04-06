@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (isset($_SESSION['user'])) {
+    header('Location: profile.php');
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,30 +16,37 @@
 </head>
 <body>
     <!--Registration form-->
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="vendor/signup.php" method="post" enctype="multipart/form-data">
         <label>Full name</label>
-        <input type="text"  placeholder="Enter your full name">
+        <input type="text" name="full_name"  placeholder="Enter your full name">
 
         <label>login</label>
-        <input type="text" placeholder="Enter your login">
+        <input type="text" name="login" placeholder="Enter your login">
 
         <label>E-mail</label>
-        <input type="email" placeholder="Enter your e-mail">
+        <input type="email" name="email" placeholder="Enter your e-mail">
 
-       <label>Profile Photo</label>
-        <input type="file">
+        <label>Profile Photo</label>
+        <input type="file" name="avatar" >
 
         <label>Password</label>
-        <input type="password" placeholder="Enter your password">
+        <input type="password" name="pswd" placeholder="Enter your password">
 
         <label>Confirm Password</label>
-        <input type="password" placeholder="Enter your password">
+        <input type="password" name="confirmPswd" placeholder="Enter your password">
 
-        <button>Log In</button>
+        <button type="submit">Log In</button>
         <p>
             You don't have an account ? - <a href="index.php">Authorize</a>
         </p>
-        
+
+        <?php
+            if (isset($_SESSION['message'])) {
+                echo '<p class="msg">' . $_SESSION['message'] . '</p>';
+            }
+            unset($_SESSION['message']);
+        ?>
+
     </form>
 </body>
 </html>
