@@ -1,0 +1,51 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    height: 100vh;
+    font-family: Montserrat, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    color: #7c9ab7;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+form {
+    font-size: 2rem;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    width: 40rem;
+    position: relative;
+}
+input {
+    margin: 1rem 0;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 0.2rem solid #e3e3e3;
+    outline: none;
+}
+button {
+    padding: 1rem;
+    background: #e3e3e3;
+    border: none;
+    cursor: pointer;
+}
+p {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
