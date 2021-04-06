@@ -5,12 +5,12 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="assets/main.css">
     <title>Authorization and Registration</title>
 </head>
 <body>
-    <!--Authorization form-->
-    <form action="" method="post">
+    <!--Registration form-->
+    <form action="" method="post" enctype="multipart/form-data">
         <label>Full name</label>
         <input type="text"  placeholder="Enter your full name">
 
@@ -21,7 +21,7 @@
         <input type="email" placeholder="Enter your e-mail">
 
        <label>Profile Photo</label>
-        <input type="file" placeholder="Enter your file">
+        <input type="file">
 
         <label>Password</label>
         <input type="password" placeholder="Enter your password">
